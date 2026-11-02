@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10121d">
+<title>AREDDL — All Rated Easy Demons Demon List</title>
+<style>
+:root{--bg:#0d0f18;--panel:#171a28;--panel2:#202438;--text:#f4f5ff;--muted:#a6abc4;--line:#30364f;--cyan:#70e5ef;--purple:#a98aff;--green:#80e0a1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#202044 0,#0d0f18 48%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:34px 18px 25px;text-align:center;border-bottom:1px solid var(--line)}
+.logo{font-size:clamp(38px,8vw,68px);font-weight:1000;letter-spacing:-3px;line-height:1;background:linear-gradient(90deg,var(--cyan),#b7a0ff 55%,#ff91c8);color:transparent;background-clip:text}
+.subtitle{color:var(--muted);margin:12px auto 20px;max-width:650px}.pill{display:inline-block;border:1px solid #454b6a;border-radius:99px;padding:5px 12px;color:#d9dcf5;font-size:12px}
+main{max-width:1100px;margin:24px auto;padding:0 15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stat,.toolbar,.table-wrap,.info{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:14px;text-align:center}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.toolbar{padding:13px;display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+input,select,button{font:inherit;border-radius:10px;border:1px solid var(--line);padding:10px 12px;background:var(--panel2);color:var(--text)}
+input{flex:1;min-width:180px}select{min-width:135px}button{cursor:pointer;font-weight:750}button.primary{background:linear-gradient(100deg,#5acbd8,#9275ec);border:0;color:#10121d}button:disabled{opacity:.45;cursor:wait}button:hover:not(:disabled){filter:brightness(1.12)}
+.table-wrap{overflow:hidden}.table-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.table-head h2{font-size:17px;margin:0}.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:700px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#141725}tbody tr:hover{background:#202438}
+.rank{font-weight:900;color:var(--cyan)}.level{font-weight:750;color:var(--text);text-decoration:none}.level:hover{color:var(--cyan)}.muted,.small{color:var(--muted);font-size:12px}.difficulty{display:inline-block;border-radius:99px;padding:3px 9px;background:#263c35;color:var(--green);font-size:12px;font-weight:800}
+.empty{text-align:center;padding:34px 15px;color:var(--muted)}.status{padding:11px 15px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+.controls{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:15px 0}
+.info{margin-top:15px;padding:15px;color:var(--muted);font-size:13px}footer{text-align:center;color:#777e9d;padding:30px 15px;font-size:12px}
+@media(max-width:560px){.stats{gap:7px}.stat{padding:10px 5px}.stat strong{font-size:21px}.toolbar>*{width:100%}.toolbar input{min-width:100%}}
+</style></head>
+<body>
+<header><div class="logo">AREDDL</div>
+<div class="subtitle">All Rated Easy Demons Demon List<br>A searchable archive of rated Geometry Dash Easy Demons, spanning Update 1.0 through 2.2.</div>
+<span class="pill">COMMUNITY ARCHIVE · EASY DEMON</span></header>
+<main>
+<section class="stats">
+ <div class="stat"><strong id="count">—</strong><span>LOADED LEVELS</span></div>
+ <div class="stat"><strong>1.0–2.2</strong><span>UPDATE RANGE</span></div>
+ <div class="stat"><strong>Easy</strong><span>DEMON DIFFICULTY</span></div>
+</section>
+<section class="toolbar">
+ <input id="search" placeholder="Search level, creator or ID…" aria-label="Search levels">
+ <select id="version" aria-label="Filter by game version"><option value="all">All versions</option></select>
+ <select id="sort" aria-label="Sort levels"><option value="rank">Server order</option><option value="name">Name A–Z</option><option value="creator">Creator A–Z</option><option value="version">Game version</option></select>
+ <button class="primary" id="loadBtn">Load Easy Demons</button>
+</section>
+<section class="table-wrap">
+ <div class="table-head"><h2>Easy Demon Archive</h2><span class="small" id="shown">Waiting to load</span></div>
+ <div class="table-scroll"><table><thead><tr><th>Rank*</th><th>Level</th><th>Creator</th><th>Level ID</th><th>Game version</th><th>Difficulty</th></tr></thead><tbody id="levels"></tbody></table></div>
+ <div class="empty" id="empty">Press <b>Load Easy Demons</b> to fetch rated Easy Demons from the Geometry Dash level database.</div>
+ <div class="status" id="status">Not connected yet. Internet access is required to fetch the live catalog.</div>
+</section>
+<div class="controls"><button id="moreBtn" disabled>Load next page</button><button id="allBtn" disabled>Load next 10 pages</button></div>
+<section class="info"><b>How this archive works</b><br>
+AREDDL fetches levels currently rated Easy Demon from the Geometry Dash search database, then displays each level's reported game version. Use the version filter to narrow the archive from 1.0 to 2.2. The API is paginated, so use the loading buttons to progressively retrieve more entries; this avoids pretending a partial first page is the entire list.<br><br>
+<b>*Rank note:</b> Rank is the order returned by the search service, not an AREDL difficulty placement or community vote. Ratings and level availability can change. Some old levels may have been updated after their original release.
+</section>
+</main><footer>AREDDL · Fan-made Geometry Dash archive · Not affiliated with RobTop Games.</footer>
+<script>
+const $=id=>document.getElementById(id);
+const versions=["1.0","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2.0","2.1","2.2"];
+versions.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent="Update "+v;$("version").append(o)});
+let levels=[],page=0,pages=null,loading=false,seen=new Set();
+const API="https://gdbrowser.com/api/search/*";
+function setStatus(s){$("status").textContent=s}
+function clean(v){return v===undefined||v===null?"":String(v)}
+function versionOf(x){return clean(x.gameVersion||x.game_version||x.versionString)}
+function render(){
+ const q=$("search").value.trim().toLowerCase(),v=$("version").value,sort=$("sort").value;
+ let a=levels.filter(x=>(v==="all"||versionOf(x)===v)&&[x.name,x.author,x.id].some(z=>clean(z).toLowerCase().includes(q)));
+ if(sort==="name")a.sort((x,y)=>clean(x.name).localeCompare(clean(y.name)));
+ if(sort==="creator")a.sort((x,y)=>clean(x.author).localeCompare(clean(y.author)));
+ if(sort==="version")a.sort((x,y)=>versions.indexOf(versionOf(y))-versions.indexOf(versionOf(x)));
+ $("count").textContent=levels.length.toLocaleString();$("shown").textContent=a.length.toLocaleString()+" shown · "+levels.length.toLocaleString()+" loaded";
+ $("levels").innerHTML=a.map(x=>{const rank=levels.indexOf(x)+1;const id=clean(x.id);return `<tr><td class="rank">#${rank}</td><td><a class="level" href="https://gdbrowser.com/${encodeURIComponent(id)}" target="_blank" rel="noopener">${esc(x.name||"Unknown level")}</a></td><td class="muted">${esc(x.author||"Unknown")}</td><td>${esc(id)}</td><td>${esc(versionOf(x)||"Unknown")}</td><td><span class="difficulty">Easy Demon</span></td></tr>`}).join("");
+ $("empty").style.display=a.length?"none":"block";
+}
+function esc(s){return clean(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function loadPage(){
+ if(loading||pages!==null&&page>=pages)return;
+ loading=true;$("loadBtn").disabled=$("moreBtn").disabled=$("allBtn").disabled=true;
+ try{
+  const url=API+"?diff=-2&demonFilter=1&starred&page="+page;
+  const r=await fetch(url);if(!r.ok)throw Error("HTTP "+r.status);
+  const data=await r.json();if(!Array.isArray(data))throw Error("Unexpected API response");
+  if(page===0){const first=data[0]||{};pages=Number(first.pages)||null}
+  let added=0;
+  for(const x of data){const id=clean(x.id);if(id&&!seen.has(id)){seen.add(id);levels.push(x);added++}}
+  page++;render();
+  setStatus(`Loaded page ${page}${pages?` of ${pages}`:""} · ${levels.length.toLocaleString()} unique Easy Demons. ${added} new on this page.`);
+  $("moreBtn").disabled=pages!==null&&page>=pages;
+  $("allBtn").disabled=pages!==null&&page>=pages;
+ }catch(e){setStatus("Could not reach the live level database: "+e.message+". Try again later or check your connection.");}
+ finally{loading=false;$("loadBtn").disabled=false;if(page>0){$("moreBtn").disabled=pages!==null&&page>=pages;$("allBtn").disabled=pages!==null&&page>=pages}}
+}
+$("loadBtn").onclick=()=>{if(page===0)loadPage();else{page=0;pages=null;levels=[];seen.clear();render();loadPage()}};
+$("moreBtn").onclick=loadPage;
+$("allBtn").onclick=async()=>{for(let i=0;i<10&&(!pages||page<pages);i++){await loadPage();if(!levels.length)break;await new Promise(r=>setTimeout(r,300))}};
+["search","version","sort"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+</script></body></html>
