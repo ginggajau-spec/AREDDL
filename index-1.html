@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111322">
+<title>AREDDL — All Rated Easy Demons Demon List</title>
+<style>
+:root{--bg:#0c0e18;--panel:#151827;--panel2:#1b2032;--line:#2a3047;--text:#f4f5fb;--muted:#a5abc2;--accent:#a78bfa;--accent2:#7c5ce7;--green:#54d6a0;--red:#ff7185;--yellow:#f5c96a;--blue:#76baff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#28204a 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--accent2);color:white;font-weight:700}button:hover{filter:brightness(1.12)}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#292f45;color:#e9eafa}.danger{background:#8d3448}.success{background:#17694f}.small{padding:7px 10px;font-size:13px}
+header{position:sticky;top:0;z-index:5;background:#101321ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px;font-size:19px}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#b59aff,#6645d6);display:grid;place-items:center;font-weight:1000;color:#171027}.navlinks{display:flex;gap:5px;margin-left:18px;flex:1}.navlinks button{background:transparent;color:var(--muted);font-weight:650}.navlinks button.active,.navlinks button:hover{background:var(--panel2);color:white}.account{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:13px}
+main{max-width:1180px;margin:30px auto;padding:0 20px 60px}.hero{padding:34px;border:1px solid #383052;border-radius:22px;background:linear-gradient(120deg,#211b39,#171a2a 62%,#182438);display:flex;align-items:center;justify-content:space-between;gap:24px}.eyebrow{color:#c7b7ff;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:900}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.06;margin:8px 0}.hero p{color:#c1c2d3;max-width:620px;margin:0}.heroMark{font-size:68px;filter:drop-shadow(0 10px 30px #a78bfa55)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 26px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{display:block;font-size:25px}.stat span,.muted{color:var(--muted);font-size:13px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:26px 0 12px}.sectionhead h2{margin:0;font-size:21px}.toolbar{display:flex;gap:9px;flex-wrap:wrap}.toolbar input,.toolbar select,.field input,.field select,.field textarea{background:#0f1220;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;outline:none}.toolbar input:focus,.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent)}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}table{border-collapse:collapse;width:100%;min-width:700px}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line)}th{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:#191d2e}tr:last-child td{border-bottom:0}.empty{text-align:center;padding:34px;color:var(--muted)}
+.pill{display:inline-block;border-radius:100px;padding:3px 9px;font-size:11px;font-weight:800;background:#34304d;color:#d6caff}.pill.green{background:#173d34;color:#7ce4b8}.pill.red{background:#48232d;color:#ff9baa}.pill.yellow{background:#493b20;color:#ffdc89}.pill.blue{background:#1d344c;color:#9bcfff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card h3{margin:0 0 8px}.card p{margin:6px 0;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px}.panel h2,.panel h3{margin-top:0}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}.field label{font-size:13px;color:#c9cce0;font-weight:700}.field textarea{min-height:90px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.notice{padding:12px 14px;border-radius:11px;background:#24243a;border:1px solid #464064;color:#d4cafa;font-size:13px;margin:12px 0}.notice.warn{background:#3b3020;border-color:#69512c;color:#ffe0a1}.notice.good{background:#17372f;border-color:#28654f;color:#a2f1d0}
+.modalback{position:fixed;inset:0;background:#050610cc;z-index:20;display:grid;place-items:center;padding:16px}.modal{width:min(460px,100%);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center}.modalhead h2{margin:0}.hidden{display:none!important}.stafftag{color:#d4c5ff}.footer{color:#747b95;text-align:center;margin:35px 0;font-size:12px}
+@media(max-width:760px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;margin:0;overflow:auto}.account{margin-left:auto}.hero{padding:24px}.heroMark{display:none}.stats{grid-template-columns:1fr}.grid,.formgrid{grid-template-columns:1fr}.sectionhead{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+ <div class="brand"><div class="logo">A</div> AREDDL</div>
+ <nav class="navlinks" aria-label="Main navigation">
+  <button class="active" data-page="home">Demon List</button>
+  <button data-page="submit">Submit Level</button>
+  <button data-page="applications">Staff Applications</button>
+  <button data-page="dashboard">Staff Dashboard</button>
+ </nav>
+ <div class="account"><span id="userLabel">Guest</span><button id="authBtn" class="small">Log in</button></div>
+</div></header>
+<main>
+<section id="page-home">
+ <div class="hero"><div><div class="eyebrow">Community-ranked Geometry Dash levels</div><h1>All Rated Easy Demons.<br><span style="color:#bba7ff">One list.</span></h1><p>Discover community-submitted Easy Demons. Every entry must pass verification review and receive a difficulty decision from a Rank Moderator before publication.</p></div><div class="heroMark">✦</div></div>
+ <div class="stats"><div class="stat"><b id="countPublished">0</b><span>Published levels</span></div><div class="stat"><b id="countPending">0</b><span>In moderation</span></div><div class="stat"><b id="countStaff">0</b><span>Staff accounts</span></div></div>
+ <div class="sectionhead"><h2>Easy Demon List</h2><div class="toolbar"><input id="search" placeholder="Search level or creator…"><select id="sort"><option value="name">Name A–Z</option><option value="new">Newest first</option><option value="id">Level ID</option></select></div></div>
+ <div class="tablewrap"><table><thead><tr><th>Level</th><th>Creator</th><th>Level ID</th><th>Placement</th><th>Status</th></tr></thead><tbody id="levelsBody"></tbody></table></div>
+ <div class="notice">The list starts empty on purpose: no levels are presented as rated or verified until moderators approve real submissions.</div>
+</section>
+<section id="page-submit" class="hidden">
+ <div class="sectionhead"><h2>Submit an Easy Demon</h2></div>
+ <div class="panel"><p class="muted">Submit a level for the moderation team to review. Please provide accurate details and evidence of legitimate completion.</p>
+ <form id="submissionForm"><div class="formgrid">
+  <div class="field"><label>Level name *</label><input name="name" required maxlength="80" placeholder="Level name"></div>
+  <div class="field"><label>Creator *</label><input name="creator" required maxlength="60" placeholder="Creator username"></div>
+  <div class="field"><label>Geometry Dash level ID *</label><input name="levelId" required inputmode="numeric" pattern="[0-9]+" placeholder="数字 / level ID"></div>
+  <div class="field"><label>Suggested difficulty</label><select name="difficulty"><option>Easy Demon</option><option>Medium Demon</option><option>Hard Demon</option><option>Insane Demon</option><option>Extreme Demon</option></select></div>
+ </div><div class="field"><label>Verification evidence URL *</label><input name="evidence" type="url" required placeholder="https://…"></div>
+ <div class="field"><label>Notes for moderators</label><textarea name="notes" maxlength="1000" placeholder="Include verifier, completion details, or other relevant context."></textarea></div>
+ <button type="submit">Send for review</button></form><div id="submitMessage"></div></div>
+</section>
+<section id="page-applications" class="hidden">
+ <div class="sectionhead"><h2>Staff Applications</h2></div>
+ <div class="panel"><p class="muted">Apply to join the AREDDL moderation team. Application Moderators review applications for Advisor, Lead Advisor, and Moderator roles. Owner-appointed staff can also be assigned directly.</p>
+ <form id="applicationForm"><div class="formgrid">
+ <div class="field"><label>Requested rank *</label><select name="rank"><option>Advisor</option><option>Lead Advisor</option><option>Moderator</option></select></div>
+ <div class="field"><label>Geometry Dash username *</label><input name="gdname" required maxlength="60"></div>
+ </div><div class="field"><label>Why should we accept you? *</label><textarea name="reason" required maxlength="1500"></textarea></div><button type="submit">Submit application</button></form><div id="appMessage"></div></div>
+</section>
+<section id="page-dashboard" class="hidden">
+ <div class="sectionhead"><h2>Staff Dashboard</h2><span id="rankLabel" class="pill">Sign in required</span></div>
+ <div id="dashboardContent"><div class="panel"><p>Log in with a staff account to access moderation tools. Regular users can still submit levels and apply for staff positions.</p><button onclick="openAuth()">Log in</button></div></div>
+</section>
+<div class="footer">AREDDL • Community project • Not affiliated with RobTop Games</div>
+</main>
+<div id="modalRoot" class="hidden"></div>
+<script>
+const KEY='areddl_demo_v1';
+const roles=['Owner','Application Moderator','Advisor','Lead Advisor','Moderator','Admin','Rank Moderator'];
+const short={Owner:'Owner', 'Application Moderator':'AMod',Advisor:'A','Lead Advisor':'LA',Moderator:'Mod',Admin:'Admin','Rank Moderator':'RMod'};
+let state=load();
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{users:[],levels:[],apps:[],current:null}}catch{return{users:[],levels:[],apps:[],current:null}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+function me(){return state.users.find(u=>u.id===state.current)||null}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function isStaff(u=me()){return !!u&&roles.includes(u.role)&&u.role!=='User'}
+function can(r){let u=me();return !!u&&(u.role==='Owner'||u.role===r)}
+function showPage(p){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById('page-'+p).classList.remove('hidden');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));if(p==='dashboard')renderDashboard()}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('authBtn').onclick=()=>me()?logout():openAuth();
+function openAuth(){document.getElementById('modalRoot').innerHTML=`<div class="modalback" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modalhead"><h2>AREDDL account</h2><button class="secondary small" onclick="closeModal()">✕</button></div><div class="notice warn">Prototype login only. Do not use a real password. Accounts are stored in this browser and are not secure.</div><div class="field"><label>Email</label><input id="authEmail" type="email" placeholder="you@example.com"></div><div class="field"><label>Password</label><input id="authPass" type="password" placeholder="Demo password"></div><div class="actions"><button onclick="login()">Log in</button><button class="secondary" onclick="register()">Create account</button></div><p class="muted">The first account created on this browser becomes the demo Owner. This is only for local testing, not production security.</p></div></div>`;document.getElementById('modalRoot').classList.remove('hidden')}
+function closeModal(){document.getElementById('modalRoot').classList.add('hidden');document.getElementById('modalRoot').innerHTML=''}
+function login(){let e=document.getElementById('authEmail').value.trim().toLowerCase(),p=document.getElementById('authPass').value;if(!e||!p)return alert('Enter email and password.');let u=state.users.find(x=>x.email===e&&x.password===p);if(!u)return alert('Account not found or password incorrect.');state.current=u.id;save();closeModal()}
+function register(){let e=document.getElementById('authEmail').value.trim().toLowerCase(),p=document.getElementById('authPass').value;if(!e||!p)return alert('Enter email and password.');if(p.length<6)return alert('Use at least 6 characters for this demo password.');if(state.users.some(x=>x.email===e))return alert('That email already has an account.');let role=state.users.length===0?'Owner':'User';let u={id:id(),email:e,password:p,role,created:Date.now()};state.users.push(u);state.current=u.id;save();closeModal();alert(role==='Owner'?'Demo Owner account created. Assign staff roles from the dashboard.':'Account created.')}
+function logout(){state.current=null;save()}
+function render(){let u=me();document.getElementById('userLabel').innerHTML=u?`${esc(u.email)} <span class="stafftag">${esc(short[u.role]||'')}</span>`:'Guest';document.getElementById('authBtn').textContent=u?'Log out':'Log in';let published=state.levels.filter(l=>l.status==='Published');document.getElementById('countPublished').textContent=published.length;document.getElementById('countPending').textContent=state.levels.filter(l=>l.status!=='Published'&&l.status!=='Rejected').length;document.getElementById('countStaff').textContent=state.users.filter(x=>isStaff(x)).length;renderLevels();if(!document.getElementById('page-dashboard').classList.contains('hidden'))renderDashboard()}
+function renderLevels(){let q=(document.getElementById('search')?.value||'').toLowerCase(),sort=document.getElementById('sort')?.value||'name';let a=state.levels.filter(l=>l.status==='Published'&&(`${l.name} ${l.creator} ${l.levelId}`).toLowerCase().includes(q));a.sort((x,y)=>sort==='new'?y.created-x.created:sort==='id'?Number(x.levelId)-Number(y.levelId):x.name.localeCompare(y.name));document.getElementById('levelsBody').innerHTML=a.length?a.map(l=>`<tr><td><b>${esc(l.name)}</b></td><td>${esc(l.creator)}</td><td>${esc(l.levelId)}</td><td>${esc(l.placement||'Unranked')}</td><td><span class="pill green">Published</span></td></tr>`).join(''):`<tr><td colspan="5" class="empty">No published levels yet. Be the first to submit one!</td></tr>`}
+document.getElementById('search').addEventListener('input',renderLevels);document.getElementById('sort').addEventListener('change',renderLevels);
+document.getElementById('submissionForm').addEventListener('submit',e=>{e.preventDefault();let u=me();if(!u)return alert('Please create an account or log in first.');let f=new FormData(e.target),levelId=String(f.get('levelId')).trim();if(state.levels.some(l=>l.levelId===levelId))return alert('That level ID has already been submitted.');state.levels.push({id:id(),name:f.get('name').trim(),creator:f.get('creator').trim(),levelId,difficulty:f.get('difficulty'),evidence:f.get('evidence').trim(),notes:f.get('notes').trim(),submitter:u.id,status:'Advisor Review',stage:'Advisor',history:[{by:u.email,action:'Submitted',at:Date.now()}],created:Date.now()});save();e.target.reset();document.getElementById('submitMessage').innerHTML='<div class="notice good">Submission received and sent to the Advisor queue.</div>'});
+document.getElementById('applicationForm').addEventListener('submit',e=>{e.preventDefault();let u=me();if(!u)return alert('Please create an account or log in first.');let f=new FormData(e.target);if(state.apps.some(a=>a.user===u.id&&a.status==='Pending'))return alert('You already have a pending application.');state.apps.push({id:id(),user:u.id,rank:f.get('rank'),gdname:f.get('gdname').trim(),reason:f.get('reason').trim(),status:'Pending',created:Date.now()});save();e.target.reset();document.getElementById('appMessage').innerHTML='<div class="notice good">Application submitted for AMod review.</div>'});
+function log(l,action){l.history.push({by:me().email,action,at:Date.now()})}
+function moveLevel(l,next,status){l.stage=next;l.status=status;log(l,'Moved to '+status);save()}
+function rejectLevel(l,reason){l.status='Rejected';l.rejection=reason;log(l,'Rejected: '+reason);save()}
+function renderDashboard(){let u=me(),root=document.getElementById('dashboardContent');document.getElementById('rankLabel').textContent=u?(short[u.role]||u.role):'Sign in required';if(!u){root.innerHTML='<div class="panel">Log in with a staff account to access moderation tools.</div>';return}
+if(u.role==='User'){root.innerHTML='<div class="panel"><h3>Welcome</h3><p>You do not currently have staff permissions. You can submit levels or apply for a staff role.</p><button onclick="showPage(\\'applications\\')">Apply for staff</button></div>';return}
+let html='';
+if(can('Owner')){html+=`<div class="panel"><h3>Owner controls</h3><p class="muted">Assign staff roles to trusted accounts. This prototype stores roles only in this browser.</p><div class="field"><label>Account</label><select id="staffUser">${state.users.map(x=>`<option value="${x.id}">${esc(x.email)} — ${esc(x.role)}</option>`).join('')}</select></div><div class="field"><label>Role</label><select id="staffRole">${roles.filter(x=>x!=='User').map(x=>`<option>${x}</option>`).join('')}</select></div><button onclick="assignRole()">Assign role</button></div>`}
+if(can('Application Moderator')){let apps=state.apps.filter(a=>a.status==='Pending');html+=`<div class="panel"><h3>Staff applications <span class="pill">${apps.length} pending</span></h3>${apps.length?apps.map(a=>`<div class="card"><b>${esc(a.gdname)}</b> · ${esc(a.rank)}<p>${esc(a.reason)}</p><p class="muted">Applicant: ${esc(state.users.find(x=>x.id===a.user)?.email||'Unknown')}</p><div class="actions"><button class="success small" onclick="decideApp('${a.id}',true)">Accept</button><button class="danger small" onclick="decideApp('${a.id}',false)">Reject</button></div></div>`).join(''):'<p class="muted">No pending applications.</p>'}</div>`}
+let allowed=queueFor(u.role);if(u.role==='Owner')allowed=['Advisor','Lead Advisor','Moderator','Admin','Rank Moderator'];let queue=state.levels.filter(l=>allowed.includes(l.stage)&&!['Published','Rejected'].includes(l.status));html+=`<div class="panel"><h3>Moderation queue <span class="pill">${queue.length} pending</span></h3>${queue.length?queue.map(l=>levelCard(l,u.role)).join(''):'<p class="muted">No submissions waiting in your queue.</p>'}</div>`;
+html+=`<div class="panel"><h3>All submissions</h3>${state.levels.length?state.levels.map(l=>`<div style="padding:10px 0;border-bottom:1px solid var(--line)"><b>${esc(l.name)}</b> <span class="pill">${esc(l.status)}</span><div class="muted">ID ${esc(l.levelId)} · ${esc(l.creator)}</div></div>`).join(''):'<p class="muted">No submissions yet.</p>'}</div>`;
+root.innerHTML=html}
+function queueFor(role){return ({Advisor:['Advisor'],'Lead Advisor':['Lead Advisor'],Moderator:['Moderator'],Admin:['Admin'],'Rank Moderator':['Rank Moderator']})[role]||[]}
+function levelCard(l,role){let actions='';if(role==='Owner'||role==='Advisor')actions=`<button class="small" onclick="advance('${l.id}','Lead Advisor','Lead Advisor Review')">Forward to LA</button>`;
+if(role==='Lead Advisor')actions=`<button class="small" onclick="advance('${l.id}','Moderator','Verification Review')">Forward to Mod</button>`;
+if(role==='Moderator')actions=`<button class="success small" onclick="advance('${l.id}','Admin','Admin Review')">Legitimately verified</button><button class="danger small" onclick="rejectLevelById('${l.id}')">Hack-verified / reject</button>`;
+if(role==='Admin')actions=`<button class="small" onclick="advance('${l.id}','Rank Moderator','Difficulty Review')">Send to RMod</button>`;
+if(role==='Rank Moderator')actions=`<button class="success small" onclick="publish('${l.id}')">Approve & publish</button><button class="danger small" onclick="rejectLevelById('${l.id}')">Reject: not Easy Demon</button>`;
+if(role==='Owner'&&l.stage==='Advisor')actions+=` <button class="secondary small" onclick="advance('${l.id}','Lead Advisor','Lead Advisor Review')">Skip to LA</button>`;
+return `<div class="card"><h3>${esc(l.name)} <span class="pill blue">${esc(l.status)}</span></h3><p>Creator: ${esc(l.creator)} · Level ID: ${esc(l.levelId)}</p><p>Suggested: ${esc(l.difficulty)}</p><p>Evidence: <a style="color:#bba7ff" href="${esc(l.evidence)}" target="_blank" rel="noopener">Open verification link ↗</a></p><p>${esc(l.notes||'No additional notes.')}</p><div class="actions">${actions}</div></div>`}
+function advance(lid,next,status){let l=state.levels.find(x=>x.id===lid);if(l)moveLevel(l,next,status)}
+function rejectLevelById(lid){let reason=prompt('Reason for rejection:');if(reason)rejectLevel(state.levels.find(x=>x.id===lid),reason)}
+function publish(lid){let l=state.levels.find(x=>x.id===lid);if(!l)return;let placement=prompt('Enter approved placement / rank label (e.g. #1 or Unranked):','Unranked');if(placement===null)return;l.placement=placement.trim()||'Unranked';l.status='Published';l.stage='Published';log(l,'Rank assigned and published');save()}
+function decideApp(aid,yes){let a=state.apps.find(x=>x.id===aid);if(!a)return;a.status=yes?'Accepted':'Rejected';if(yes){let u=state.users.find(x=>x.id===a.user);if(u)u.role=a.rank}save()}
+function assignRole(){let u=state.users.find(x=>x.id===document.getElementById('staffUser').value);if(!u)return;u.role=document.getElementById('staffRole').value;save();alert('Role assigned in this browser.')}
+render();
+</script>
+</body>
+</html>
